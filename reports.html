@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-sidenav-size="condensed">
 
     <head>
         <meta charset="utf-8" />
-        <title>File Manager | Jidox - Material Design Admin & Dashboard Template</title>
+        <title>Layout Icon View | Jidox - Material Design Admin & Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Daterangepicker css -->
+        <link rel="stylesheet" href="assets/vendor/daterangepicker/daterangepicker.css">
+
+        <!-- Vector Map css -->
+        <link rel="stylesheet" href="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
 
         <!-- Theme Config Js -->
         <script src="assets/js/config.js"></script>
@@ -26,7 +32,6 @@
         <!-- Begin page -->
         <div class="wrapper">
 
-            
             <!-- ========== Topbar Start ========== -->
             <div class="navbar-custom">
                 <div class="topbar container-fluid">
@@ -567,86 +572,84 @@
                     <!-- Start Content-->
                     <div class="container-fluid">
 
-                         <div class="card shadow mb-4 mt-5">
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">All Leads</h6>
-                        <div>
-                            <button class="btn btn-sm btn-outline-primary me-2">Export</button>
-                            <button class="btn btn-sm btn-primary">Add New Lead</button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="leadsTable">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Customer</th>
-                                        <th>Service</th>
-                                        <th>Requested Date</th>
-                                        <th>Status</th>
-                                        <th>Priority</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="table-success">
-                                        <td>#LEAD-001</td>
-                                        <td>John Doe</td>
-                                        <td>Plumbing</td>
-                                        <td>Oct 15, 2023</td>
-                                        <td><span class="badge bg-success">New</span></td>
-                                        <td><span class="badge bg-danger">High</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Assign</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#LEAD-002</td>
-                                        <td>Sarah Johnson</td>
-                                        <td>HVAC</td>
-                                        <td>Oct 14, 2023</td>
-                                        <td><span class="badge bg-primary">Assigned</span></td>
-                                        <td><span class="badge bg-warning">Medium</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-warning">Track</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#LEAD-003</td>
-                                        <td>Michael Brown</td>
-                                        <td>Electrical</td>
-                                        <td>Oct 13, 2023</td>
-                                        <td><span class="badge bg-info">In Progress</span></td>
-                                        <td><span class="badge bg-danger">High</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-warning">Track</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#LEAD-004</td>
-                                        <td>Emily Wilson</td>
-                                        <td>Carpentry</td>
-                                        <td>Oct 12, 2023</td>
-                                        <td><span class="badge bg-secondary">Completed</span></td>
-                                        <td><span class="badge bg-success">Low</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-secondary">Details</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Reports & Analytics</h5>
+                    <div>
+                        <button class="btn btn-sm btn-outline-danger me-2"><i class="fas fa-file-pdf"></i> PDF</button>
+                        <button class="btn btn-sm btn-outline-success"><i class="fas fa-file-csv"></i> CSV</button>
                     </div>
                 </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="chart-container">
+                                <canvas id="leadsChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="chart-container">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>This Week</th>
+                                    <th>Last Week</th>
+                                    <th>Change</th>
+                                    <th>MTD</th>
+                                    <th>YTD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Number of Leads</td>
+                                    <td>42</td>
+                                    <td>38</td>
+                                    <td class="text-success">+10.5%</td>
+                                    <td>156</td>
+                                    <td>1,240</td>
+                                </tr>
+                                <tr>
+                                    <td>Conversion Rate</td>
+                                    <td>24%</td>
+                                    <td>22%</td>
+                                    <td class="text-success">+2.0%</td>
+                                    <td>23%</td>
+                                    <td>21%</td>
+                                </tr>
+                                <tr>
+                                    <td>Revenue</td>
+                                    <td>$8,450</td>
+                                    <td>$7,200</td>
+                                    <td class="text-success">+17.4%</td>
+                                    <td>$28,900</td>
+                                    <td>$245,800</td>
+                                </tr>
+                                <tr>
+                                    <td>Avg. Job Value</td>
+                                    <td>$325</td>
+                                    <td>$315</td>
+                                    <td class="text-success">+3.2%</td>
+                                    <td>$318</td>
+                                    <td>$305</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-                    </div> <!-- container -->
+                    </div>
+                    <!-- container -->
 
-                </div> <!-- content -->
+                </div>
+                <!-- content -->
 
                 <!-- Footer Start -->
                 <footer class="footer">
@@ -851,13 +854,89 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>          
+        
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
 
+        <!-- Daterangepicker js -->
+        <script src="assets/vendor/daterangepicker/moment.min.js"></script>
+        <script src="assets/vendor/daterangepicker/daterangepicker.js"></script>
+        
+        <!-- Apex Charts js -->
+        <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+
+        <!-- Vector Map js -->
+        <script src="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="assets/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+
+        <!-- Dashboard App js -->
+        <script src="assets/js/pages/demo.dashboard.js"></script>
+
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Toggle sidebar
+        document.getElementById('sidebarCollapse').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('content').classList.toggle('active');
+        });
+        
+        // Charts
+        const leadsCtx = document.getElementById('leadsChart').getContext('2d');
+        const leadsChart = new Chart(leadsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Number of Leads',
+                    data: [65, 59, 80, 81, 56, 72],
+                    backgroundColor: 'rgba(58, 87, 232, 0.7)',
+                    borderColor: 'rgba(58, 87, 232, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Revenue ($)',
+                    data: [12500, 15000, 18000, 16500, 19500, 22000],
+                    backgroundColor: 'rgba(26, 160, 83, 0.2)',
+                    borderColor: 'rgba(26, 160, 83, 1)',
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
 
     </body>
-
-</html>
+</html> 

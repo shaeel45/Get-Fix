@@ -3,13 +3,16 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>File Manager | Jidox - Material Design Admin & Dashboard Template</title>
+        <title>Calendar | Jidox - Material Design Admin & Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Fullcalendar css -->
+        <link href="assets/vendor/fullcalendar/main.min.css" rel="stylesheet" type="text/css" />
 
         <!-- Theme Config Js -->
         <script src="assets/js/config.js"></script>
@@ -557,92 +560,92 @@
             </div>
             <!-- ========== Left Sidebar End ========== -->
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
-
             <div class="content-page">
                 <div class="content">
 
                     <!-- Start Content-->
                     <div class="container-fluid">
 
-                         <div class="card shadow mb-4 mt-5">
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">All Leads</h6>
-                        <div>
-                            <button class="btn btn-sm btn-outline-primary me-2">Export</button>
-                            <button class="btn btn-sm btn-primary">Add New Lead</button>
+                        <div class="container-fluid pt-4">
+                <h2 class="mb-4">Job Assignment</h2>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Assign New Job</h6>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label">Select Lead</label>
+                                        <select class="form-select">
+                                            <option selected>Select a lead...</option>
+                                            <option>John Doe - Plumbing (High Priority)</option>
+                                            <option>Sarah Johnson - HVAC (Medium Priority)</option>
+                                            <option>Michael Brown - Electrical (High Priority)</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Select Vendor</label>
+                                        <select class="form-select">
+                                            <option selected>Select a vendor...</option>
+                                            <option>City Plumbing Experts</option>
+                                            <option>Quick Fix HVAC</option>
+                                            <option>Pro Electricians</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Scheduled Date & Time</label>
+                                        <input type="datetime-local" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Notes for Vendor</label>
+                                        <textarea class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Assign Job</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="leadsTable">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Customer</th>
-                                        <th>Service</th>
-                                        <th>Requested Date</th>
-                                        <th>Status</th>
-                                        <th>Priority</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="table-success">
-                                        <td>#LEAD-001</td>
-                                        <td>John Doe</td>
-                                        <td>Plumbing</td>
-                                        <td>Oct 15, 2023</td>
-                                        <td><span class="badge bg-success">New</span></td>
-                                        <td><span class="badge bg-danger">High</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Assign</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#LEAD-002</td>
-                                        <td>Sarah Johnson</td>
-                                        <td>HVAC</td>
-                                        <td>Oct 14, 2023</td>
-                                        <td><span class="badge bg-primary">Assigned</span></td>
-                                        <td><span class="badge bg-warning">Medium</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-warning">Track</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#LEAD-003</td>
-                                        <td>Michael Brown</td>
-                                        <td>Electrical</td>
-                                        <td>Oct 13, 2023</td>
-                                        <td><span class="badge bg-info">In Progress</span></td>
-                                        <td><span class="badge bg-danger">High</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-warning">Track</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#LEAD-004</td>
-                                        <td>Emily Wilson</td>
-                                        <td>Carpentry</td>
-                                        <td>Oct 12, 2023</td>
-                                        <td><span class="badge bg-secondary">Completed</span></td>
-                                        <td><span class="badge bg-success">Low</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-secondary">Details</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    
+                    <div class="col-md-6">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Recent Assignments</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Plumbing Repair for John Doe</h6>
+                                            <small class="text-success">Assigned</small>
+                                        </div>
+                                        <p class="mb-1">Vendor: City Plumbing Experts</p>
+                                        <small>Scheduled: Today, 2:00 PM</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">HVAC Service for Sarah Johnson</h6>
+                                            <small class="text-warning">In Progress</small>
+                                        </div>
+                                        <p class="mb-1">Vendor: Quick Fix HVAC</p>
+                                        <small>Scheduled: Today, 11:00 AM</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Electrical Repair for Michael Brown</h6>
+                                            <small class="text-info">In Progress</small>
+                                        </div>
+                                        <p class="mb-1">Vendor: Pro Electricians</p>
+                                        <small>Scheduled: Yesterday, 3:30 PM</small>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
                     </div> <!-- container -->
 
@@ -852,8 +855,15 @@
                 </div>
             </div>
         </div>  
+
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Fullcalendar js -->
+        <script src="assets/vendor/fullcalendar/main.min.js"></script>
+
+        <!-- Calendar App Demo js -->
+        <script src="assets/js/pages/demo.calendar.js"></script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>

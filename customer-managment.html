@@ -3,13 +3,17 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>File Manager | Jidox - Material Design Admin & Dashboard Template</title>
+        <title>Email Read | Jidox - Material Design Admin & Dashboard Template</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- Quill css -->
+        <link href="assets/vendor/quill/quill.core.css" rel="stylesheet" type="text/css" />
+        <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css" />
 
         <!-- Theme Config Js -->
         <script src="assets/js/config.js"></script>
@@ -473,7 +477,7 @@
                     </div>
 
                     <!--- Sidemenu -->
-                   <ul class="side-nav">
+                  <ul class="side-nav">
 
                         <li class="side-nav-title mt-1"> Main</li>
 
@@ -566,87 +570,142 @@
 
                     <!-- Start Content-->
                     <div class="container-fluid">
-
-                         <div class="card shadow mb-4 mt-5">
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">All Leads</h6>
-                        <div>
-                            <button class="btn btn-sm btn-outline-primary me-2">Export</button>
-                            <button class="btn btn-sm btn-primary">Add New Lead</button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="leadsTable">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Customer</th>
-                                        <th>Service</th>
-                                        <th>Requested Date</th>
-                                        <th>Status</th>
-                                        <th>Priority</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="table-success">
-                                        <td>#LEAD-001</td>
-                                        <td>John Doe</td>
-                                        <td>Plumbing</td>
-                                        <td>Oct 15, 2023</td>
-                                        <td><span class="badge bg-success">New</span></td>
-                                        <td><span class="badge bg-danger">High</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Assign</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#LEAD-002</td>
-                                        <td>Sarah Johnson</td>
-                                        <td>HVAC</td>
-                                        <td>Oct 14, 2023</td>
-                                        <td><span class="badge bg-primary">Assigned</span></td>
-                                        <td><span class="badge bg-warning">Medium</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-warning">Track</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#LEAD-003</td>
-                                        <td>Michael Brown</td>
-                                        <td>Electrical</td>
-                                        <td>Oct 13, 2023</td>
-                                        <td><span class="badge bg-info">In Progress</span></td>
-                                        <td><span class="badge bg-danger">High</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-warning">Track</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#LEAD-004</td>
-                                        <td>Emily Wilson</td>
-                                        <td>Carpentry</td>
-                                        <td>Oct 12, 2023</td>
-                                        <td><span class="badge bg-secondary">Completed</span></td>
-                                        <td><span class="badge bg-success">Low</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-secondary">Details</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        
+                         <div class="container-fluid pt-4">
+                <h2 class="mb-4">Customer Management</h2>
+                
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="card shadow">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">All Customers</h6>
+                                <button class="btn btn-sm btn-primary">Add New Customer</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card customer-card">
+                                            <div class="card-body text-center">
+                                                <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Avatar">
+                                                <h5 class="card-title">John Doe</h5>
+                                                <p class="card-text">
+                                                    <i class="fas fa-envelope me-2"></i>john.doe@example.com<br>
+                                                    <i class="fas fa-phone me-2"></i>(555) 123-4567
+                                                </p>
+                                                <p class="card-text">
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-map-marker-alt me-2"></i>New York, NY
+                                                    </small>
+                                                </p>
+                                                <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card customer-card">
+                                            <div class="card-body text-center">
+                                                <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Avatar">
+                                                <h5 class="card-title">Sarah Johnson</h5>
+                                                <p class="card-text">
+                                                    <i class="fas fa-envelope me-2"></i>sarahj@example.com<br>
+                                                    <i class="fas fa-phone me-2"></i>(555) 987-6543
+                                                </p>
+                                                <p class="card-text">
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-map-marker-alt me-2"></i>Jersey City, NJ
+                                                    </small>
+                                                </p>
+                                                <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card customer-card">
+                                            <div class="card-body text-center">
+                                                <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Avatar">
+                                                <h5 class="card-title">Michael Brown</h5>
+                                                <p class="card-text">
+                                                    <i class="fas fa-envelope me-2"></i>m.brown@example.com<br>
+                                                    <i class="fas fa-phone me-2"></i>(555) 456-7890
+                                                </p>
+                                                <p class="card-text">
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-map-marker-alt me-2"></i>Brooklyn, NY
+                                                    </small>
+                                                </p>
+                                                <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card customer-card">
+                                            <div class="card-body text-center">
+                                                <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Avatar">
+                                                <h5 class="card-title">Emily Wilson</h5>
+                                                <p class="card-text">
+                                                    <i class="fas fa-envelope me-2"></i>emilyw@example.com<br>
+                                                    <i class="fas fa-phone me-2"></i>(555) 234-5678
+                                                </p>
+                                                <p class="card-text">
+                                                    <small class="text-muted">
+                                                        <i class="fas fa-map-marker-alt me-2"></i>Queens, NY
+                                                    </small>
+                                                </p>
+                                                <button class="btn btn-sm btn-outline-primary">View Details</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
+            </div>
                     </div> <!-- container -->
 
                 </div> <!-- content -->
+
+                <!-- Compose Modal -->
+                <div id="compose-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compose-header-modalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header modal-colored-header bg-primary">
+                                <h4 class="modal-title" id="compose-header-modalLabel">New Message</h4>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="p-1">
+                                <div class="modal-body px-3 pt-3 pb-0">
+                                    <form>
+                                        <div class="mb-2">
+                                            <label for="msgto" class="form-label">To</label>
+                                            <input type="text" id="msgto" class="form-control" placeholder="Example@email.com">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="mailsubject" class="form-label">Subject</label>
+                                            <input type="text" id="mailsubject" class="form-control" placeholder="Your subject">
+                                        </div>
+                                        <div class="write-mdg-box mb-3">
+                                            <label class="form-label">Message</label>
+                                            <div id="snow-editor" style="height: 200px;">
+                                                <h3>This is a simple editable area.</h3>
+                                                <p>
+                                                    End of simple area
+                                                </p>
+                                            </div><!-- end Snow-editor-->
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="px-3 pb-3">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i class="ri-send-plane-2-line me-1"></i> Send Message</button>
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
 
                 <!-- Footer Start -->
                 <footer class="footer">
@@ -852,12 +911,18 @@
                 </div>
             </div>
         </div>  
+
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
+
+        <!-- Quill Editor js -->
+        <script src="assets/vendor/quill/quill.min.js"></script>
+
+        <!-- Page init js -->
+        <script src="assets/js/pages/demo.inbox.js"></script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
 
     </body>
-
 </html>
