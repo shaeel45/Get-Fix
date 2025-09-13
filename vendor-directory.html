@@ -567,105 +567,122 @@
                     <!-- Start Content-->
                     <div class="container-fluid">
 
-                       <div class="container-fluid pt-4">
-                <h2 class="mb-4">Vendor Directory</h2>
-                
-                <div class="row mb-4">
-                    <div class="col-md-12">
-                        <div class="card shadow">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">All Vendors</h6>
-                                <button class="btn btn-sm btn-primary">Add New Vendor</button>
-                            </div>
-                            <div class="card-body">
-                                <div class="vendor-category">
-                                    <h5 class="mb-3"><i class="fas fa-faucet me-2"></i>Plumbing</h5>
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">City Plumbing Experts</h5>
-                                                    <p class="card-text">
-                                                        <i class="fas fa-phone me-2"></i>(555) 111-2222<br>
-                                                        <i class="fas fa-envelope me-2"></i>contact@cityplumbing.com
-                                                    </p>
-                                                    <div class="mb-2">
-                                                        <span class="service-badge bg-primary">Pipe Repair</span>
-                                                        <span class="service-badge bg-primary">Leak Detection</span>
-                                                        <span class="service-badge bg-primary">Installation</span>
-                                                    </div>
-                                                    <p class="card-text"><small class="text-muted">Rating: 4.8/5 (124 reviews)</small></p>
-                                                    <button class="btn btn-sm btn-outline-primary">View Details</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Quick Flow Plumbers</h5>
-                                                    <p class="card-text">
-                                                        <i class="fas fa-phone me-2"></i>(555) 333-4444<br>
-                                                        <i class="fas fa-envelope me-2"></i>info@quickflow.com
-                                                    </p>
-                                                    <div class="mb-2">
-                                                        <span class="service-badge bg-primary">Drain Cleaning</span>
-                                                        <span class="service-badge bg-primary">Water Heaters</span>
-                                                        <span class="service-badge bg-primary">Emergency Service</span>
-                                                    </div>
-                                                    <p class="card-text"><small class="text-muted">Rating: 4.6/5 (89 reviews)</small></p>
-                                                    <button class="btn btn-sm btn-outline-primary">View Details</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="vendor-category">
-                                    <h5 class="mb-3"><i class="fas fa-fan me-2"></i>HVAC</h5>
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Quick Fix HVAC</h5>
-                                                    <p class="card-text">
-                                                        <i class="fas fa-phone me-2"></i>(555) 555-6666<br>
-                                                        <i class="fas fa-envelope me-2"></i>service@quickfixhvac.com
-                                                    </p>
-                                                    <div class="mb-2">
-                                                        <span class="service-badge bg-success">AC Repair</span>
-                                                        <span class="service-badge bg-success">Heating</span>
-                                                        <span class="service-badge bg-success">Maintenance</span>
-                                                    </div>
-                                                    <p class="card-text"><small class="text-muted">Rating: 4.7/5 (102 reviews)</small></p>
-                                                    <button class="btn btn-sm btn-outline-primary">View Details</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Comfort Control Systems</h5>
-                                                    <p class="card-text">
-                                                        <i class="fas fa-phone me-2"></i>(555) 777-8888<br>
-                                                        <i class="fas fa-envelope me-2"></i>info@comfortcontrol.com
-                                                    </p>
-                                                    <div class="mb-2">
-                                                        <span class="service-badge bg-success">Installation</span>
-                                                        <span class="service-badge bg-success">Ventilation</span>
-                                                        <span class="service-badge bg-success">Commercial HVAC</span>
-                                                    </div>
-                                                    <p class="card-text"><small class="text-muted">Rating: 4.9/5 (156 reviews)</small></p>
-                                                    <button class="btn btn-sm btn-outline-primary">View Details</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   <div class="container-fluid pt-4">
+    <h2 class="mb-4">Vendor Directory</h2>
+
+    <!-- Filter and Add Vendor -->
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <select class="form-select" id="vendorFilter">
+                <option value="all">All Categories</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="HVAC">HVAC</option>
+                <!-- Add more categories as needed -->
+            </select>
+        </div>
+        <div class="col-md-6 text-end">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVendorModal">Add New Vendor</button>
+        </div>
+    </div>
+
+    <!-- Vendor Table (Responsive Cards Converted to Table Style for Contrast) -->
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Vendor Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Category</th>
+                            <th>Services</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vendorTable">
+                        <tr data-category="Plumbing">
+                            <td>City Plumbing Experts</td>
+                            <td>(555) 111-2222</td>
+                            <td>contact@cityplumbing.com</td>
+                            <td>Plumbing</td>
+                            <td>Pipe Repair, Leak Detection, Installation</td>
+                            <td><button class="btn btn-sm btn-outline-primary">View Details</button></td>
+                        </tr>
+                        <tr data-category="Plumbing">
+                            <td>Quick Flow Plumbers</td>
+                            <td>(555) 333-4444</td>
+                            <td>info@quickflow.com</td>
+                            <td>Plumbing</td>
+                            <td>Drain Cleaning, Water Heaters, Emergency Service</td>
+                            <td><button class="btn btn-sm btn-outline-primary">View Details</button></td>
+                        </tr>
+                        <tr data-category="HVAC">
+                            <td>Quick Fix HVAC</td>
+                            <td>(555) 555-6666</td>
+                            <td>service@quickfixhvac.com</td>
+                            <td>HVAC</td>
+                            <td>AC Repair, Heating, Maintenance</td>
+                            <td><button class="btn btn-sm btn-outline-primary">View Details</button></td>
+                        </tr>
+                        <tr data-category="HVAC">
+                            <td>Comfort Control Systems</td>
+                            <td>(555) 777-8888</td>
+                            <td>info@comfortcontrol.com</td>
+                            <td>HVAC</td>
+                            <td>Installation, Ventilation, Commercial HVAC</td>
+                            <td><button class="btn btn-sm btn-outline-primary">View Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Add Vendor Modal -->
+<div class="modal fade" id="addVendorModal" tabindex="-1" aria-labelledby="addVendorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addVendorModalLabel">Add New Vendor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="vendorName" class="form-label">Vendor Name</label>
+                    <input type="text" class="form-control" id="vendorName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="vendorPhone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="vendorPhone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="vendorEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="vendorEmail" required>
+                </div>
+                <div class="mb-3">
+                    <label for="vendorCategory" class="form-label">Category</label>
+                    <select class="form-select" id="vendorCategory">
+                        <option value="Plumbing">Plumbing</option>
+                        <option value="HVAC">HVAC</option>
+                        <!-- Add more categories as needed -->
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="vendorServices" class="form-label">Services (comma separated)</label>
+                    <input type="text" class="form-control" id="vendorServices" required>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">Save Vendor</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
                         
 
                     </div> <!-- container -->
@@ -890,6 +907,16 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+<script>
+    document.getElementById('vendorFilter').addEventListener('change', function () {
+        const filter = this.value.toLowerCase();
+        const rows = document.querySelectorAll('#vendorTable tr');
+        rows.forEach(row => {
+            const category = row.getAttribute('data-category').toLowerCase();
+            row.style.display = (filter === 'all' || category === filter) ? '' : 'none';
+        });
+    });
+</script>
 
     </body>
 </html>
