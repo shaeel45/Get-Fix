@@ -21,7 +21,21 @@
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
-
+ <style>
+    .filter-icon {
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #173d1f;
+    }
+    .dropdown-filter-menu {
+      min-width: 200px;
+      padding: 10px;
+    }
+    .dropdown-filter-menu select {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
     <body>
         <!-- Begin page -->
         <div class="wrapper">
@@ -563,44 +577,103 @@
             <div class="content-page">
                 <div class="content">
 
-                    <!-- Start Content-->
-                    <div class="container-fluid pt-4">
-<h2 class="mb-4">All Leads</h2>
-                         <div class="card shadow mb-4 mt-5">
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <div>
-                            <button class="btn btn-sm btn-outline-primary me-2">Export</button>
-                            <button class="btn btn-sm btn-primary">Add New Lead</button>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="leadsTable">
-                                <thead>
-                                    <tr>
-                                        <th style="color: #173d1f;">ID</th>
-                                        <th style="color: #173d1f;">Customer</th>
-                                        <th style="color: #173d1f;">Service</th>
-                                        <th style="color: #173d1f;">Requested Date</th>
-                                        <th style="color: #173d1f;">Status</th>
-                                        <th style="color: #173d1f;">Priority</th>
-                                        <th style="color: #173d1f;">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="table-success">
+                    <div class="container-fluid mt-5">
+    <h2 class="mb-4">All Leads</h2>
+
+    <div class="d-flex justify-content-between mb-3">
+        <div>
+            <button class="btn btn-sm me-2 text-white" style="background-color: #173d1f;" id="exportPDF"><i class="fas fa-file-pdf me-1"></i>Export</button>
+            <button class="btn btn-sm text-white" style="background-color: #173d1f;" data-bs-toggle="modal" data-bs-target="#addLeadModal"><i class="fas fa-plus me-1"></i>Add New Lead</button>
+        </div>
+        <div>
+      <!-- Filter icon button -->
+      <div class="dropdown">
+        <i class="fas fa-filter filter-icon" style="color: #173d1f;" id="filterDropdownButton" data-bs-toggle="dropdown" aria-expanded="false" title="Filter"></i>
+        <div class="dropdown-menu dropdown-filter-menu" aria-labelledby="filterDropdownButton">
+          <label for="filterStatus">Status:</label>
+          <select class="form-select form-select-sm" id="filterStatus">
+            <option value="">All</option>
+            <option value="New">New</option>
+            <option value="Assigned">Assigned</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+
+          <label for="filterPriority">Priority:</label>
+          <select class="form-select form-select-sm" id="filterPriority">
+            <option value="">All</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+
+          <button class="btn btn-sm text-white w-100" style="background-color: #173d1f;" id="applyFiltersBtn">Apply</button>
+          <button class="btn btn-sm btn-secondary w-100 mt-1" id="clearFiltersBtn">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover" id="leadsTable">
+            <thead class="table-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Service</th>
+                    <th>Requested Date</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="leadsBody">
+                <tr data-status="New" data-priority="High">
+                    <td>#LEAD-001</td>
+                    <td>John Doe</td>
+                    <td>Plumbing</td>
+                    <td>2023-10-15</td>
+                    <td><span class="badge bg-success">New</span></td>
+                    <td><span class="badge bg-danger">High</span></td>
+                    <td>
+                                            <button class="btn btn-sm  view-details text-white" style="background-color: #173d1f;"  data-bs-toggle="modal" data-bs-target="#customerDetailModal" data-customer-id="2">
+             
+                                                <i class="fas fa-user-check  me-2" role="button" title="Assign"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-sm text-white" style="background-color: #173d1f;">
+                              
+                                                <i class="fas fa-eye  me-2" role="button" title="View"></i>
+                                            </button> -->
+                                             <button class="btn btn-sm text-white" style="background-color: red;">
+                              
+                                                <i class="fas fa-trash-alt  delete-lead" role="button" title="Delete"></i>
+                                            </button>
+                    </td>
+                </tr>
+                 <tr data-status="New" data-priority="High">
                                         <td>#LEAD-001</td>
                                         <td>John Doe</td>
                                         <td>Plumbing</td>
                                         <td>Oct 15, 2023</td>
                                         <td><span class="badge bg-success">New</span></td>
                                         <td><span class="badge bg-danger">High</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Assign</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
+                                   <td>
+                                            <button class="btn btn-sm  view-details text-white" style="background-color: #173d1f;"  data-bs-toggle="modal" data-bs-target="#customerDetailModal" data-customer-id="2">
+             
+                                                <i class="fas fa-user-check  me-2" role="button" title="Assign"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-sm text-white" style="background-color: #173d1f;">
+                              
+                                                <i class="fas fa-eye  me-2" role="button" title="View"></i>
+                                            </button> -->
+                                             <button class="btn btn-sm text-white" style="background-color: red;">
+                              
+                                                <i class="fas fa-trash-alt  delete-lead" role="button" title="Delete"></i>
+                                            </button>
+                    </td>
                                     </tr>
-                                    <tr>
+                                    <tr data-status="Assigned" data-priority="Medium">
                                         <td>#LEAD-002</td>
                                         <td>Sarah Johnson</td>
                                         <td>HVAC</td>
@@ -608,42 +681,130 @@
                                         <td><span class="badge bg-primary">Assigned</span></td>
                                         <td><span class="badge bg-warning">Medium</span></td>
                                         <td>
-                                            <button class="btn btn-sm btn-warning">Track</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
+                                            <button class="btn btn-sm  view-details text-white" style="background-color: #173d1f;"  data-bs-toggle="modal" data-bs-target="#customerDetailModal" data-customer-id="2">
+             
+                                                <i class="fas fa-user-check  me-2" role="button" title="Assign"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-sm text-white" style="background-color: #173d1f;">
+                              
+                                                <i class="fas fa-eye  me-2" role="button" title="View"></i>
+                                            </button> -->
+                                             <button class="btn btn-sm text-white" style="background-color: red;">
+                              
+                                                <i class="fas fa-trash-alt  delete-lead" role="button" title="Delete"></i>
+                                            </button>
+                    </td>
                                     </tr>
-                                    <tr>
+                                    <tr data-status="In Progress" data-priority="High">
                                         <td>#LEAD-003</td>
                                         <td>Michael Brown</td>
                                         <td>Electrical</td>
                                         <td>Oct 13, 2023</td>
                                         <td><span class="badge bg-info">In Progress</span></td>
                                         <td><span class="badge bg-danger">High</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-warning">Track</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
+                           <td>
+                                            <button class="btn btn-sm  view-details text-white" style="background-color: #173d1f;"  data-bs-toggle="modal" data-bs-target="#customerDetailModal" data-customer-id="2">
+             
+                                                <i class="fas fa-user-check  me-2" role="button" title="Assign"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-sm text-white" style="background-color: #173d1f;">
+                              
+                                                <i class="fas fa-eye  me-2" role="button" title="View"></i>
+                                            </button> -->
+                                             <button class="btn btn-sm text-white" style="background-color: red;">
+                              
+                                                <i class="fas fa-trash-alt  delete-lead" role="button" title="Delete"></i>
+                                            </button>
+                    </td>
                                     </tr>
-                                    <tr>
+                                    <tr data-status="Completed" data-priority="Low">
                                         <td>#LEAD-004</td>
                                         <td>Emily Wilson</td>
                                         <td>Carpentry</td>
                                         <td>Oct 12, 2023</td>
                                         <td><span class="badge bg-secondary">Completed</span></td>
                                         <td><span class="badge bg-success">Low</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-secondary">Details</button>
-                                            <button class="btn btn-sm btn-info">View</button>
-                                        </td>
+                                 <td>
+                                            <button class="btn btn-sm  view-details text-white" style="background-color: #173d1f;"  data-bs-toggle="modal" data-bs-target="#customerDetailModal" data-customer-id="2">
+             
+                                                <i class="fas fa-user-check  me-2" role="button" title="Assign"></i>
+                                            </button>
+                                            <!-- <button class="btn btn-sm text-white" style="background-color: #173d1f;">
+                              
+                                                <i class="fas fa-eye  me-2" role="button" title="View"></i>
+                                            </button> -->
+                                             <button class="btn btn-sm text-white" style="background-color: red;">
+                              
+                                                <i class="fas fa-trash-alt  delete-lead" role="button" title="Delete"></i>
+                                            </button>
+                    </td>
                                     </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                    </div> <!-- container -->
-
+<!-- Add Lead Modal -->
+<div class="modal fade" id="addLeadModal" tabindex="-1" aria-labelledby="addLeadModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="leadForm">
+        <div class="modal-header" style="background-color: #173d1f;">
+          <h5 class="modal-title text-white" id="addLeadModalLabel">Add New Lead</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+            <label>Customer</label>
+            <select class="form-select" id="customerSelect" required>
+              <option value="">Choose Customer</option>
+              <option>John Doe</option>
+              <option>Sarah Johnson</option>
+              <option>Michael Brown</option>
+              <option>Emily Wilson</option>
+              <!-- Add more customers as needed -->
+            </select>
+          </div>
+          <div class="mb-3">
+            <label>Service</label>
+            <select class="form-select" id="serviceSelect" required>
+              <option value="">Choose Service</option>
+              <option>Plumbing</option>
+              <option>HVAC</option>
+              <option>Electrical</option>
+              <option>Carpentry</option>
+              <!-- Add more services as needed -->
+            </select>
+          </div>
+            <div class="mb-3">
+                <label>Requested Date</label>
+                <input type="date" class="form-control" id="requestDate" required>
+            </div>
+            <div class="mb-3">
+                <label>Status</label>
+                <select class="form-select" id="statusSelect" required>
+                    <option>New</option>
+                    <option>Assigned</option>
+                    <option>In Progress</option>
+                    <option>Completed</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label>Priority</label>
+                <select class="form-select" id="prioritySelect" required>
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn text-white" style="background-color: #173d1f;">Add Lead</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
                 </div> <!-- content -->
 
                 <!-- Footer Start -->
@@ -849,13 +1010,101 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> 
         <!-- Vendor js -->
         <script src="assets/js/vendor.min.js"></script>
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+<script>
+ // Add new lead
+  document.getElementById("leadForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const id = "#LEAD-" + Math.floor(100 + Math.random() * 900);
+    const customer = document.getElementById("customerSelect").value;
+    const service = document.getElementById("serviceSelect").value;
+    const date = document.getElementById("requestDate").value;
+    const status = document.getElementById("statusSelect").value;
+    const priority = document.getElementById("prioritySelect").value;
 
+    const statusClass = {
+      "New": "success",
+      "Assigned": "primary",
+      "In Progress": "info",
+      "Completed": "secondary"
+    }[status];
+
+    const priorityClass = {
+      "High": "danger",
+      "Medium": "warning",
+      "Low": "success"
+    }[priority];
+
+    const rowHtml = `
+      <tr data-status="${status}" data-priority="${priority}">
+        <td>${id}</td>
+        <td>${customer}</td>
+        <td>${service}</td>
+        <td>${date}</td>
+        <td><span class="badge bg-${statusClass}">${status}</span></td>
+        <td><span class="badge bg-${priorityClass}">${priority}</span></td>
+        <td>
+          <i class="fas fa-user-check text-primary me-2" role="button" title="Assign"></i>
+          <i class="fas fa-eye text-info me-2" role="button" title="View"></i>
+          <i class="fas fa-trash-alt  delete-lead" role="button" title="Delete"></i>
+        </td>
+      </tr>
+    `;
+    document.getElementById("leadsBody").insertAdjacentHTML("beforeend", rowHtml);
+    document.getElementById("leadForm").reset();
+    // hide modal
+    bootstrap.Modal.getInstance(document.getElementById("addLeadModal")).hide();
+  });
+
+  // Delete lead
+  document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("delete-lead")) {
+      e.target.closest("tr").remove();
+    }
+  });
+
+  // Filter logic
+  function applyFilters(status, priority) {
+    document.querySelectorAll("#leadsBody tr").forEach(row => {
+      const matchStatus = !status || row.dataset.status === status;
+      const matchPriority = !priority || row.dataset.priority === priority;
+      row.style.display = (matchStatus && matchPriority) ? "" : "none";
+    });
+  }
+
+  document.getElementById("applyFiltersBtn").addEventListener("click", function() {
+    const status = document.getElementById("filterStatus").value;
+    const priority = document.getElementById("filterPriority").value;
+    applyFilters(status, priority);
+  });
+
+  document.getElementById("clearFiltersBtn").addEventListener("click", function() {
+    document.getElementById("filterStatus").value = "";
+    document.getElementById("filterPriority").value = "";
+    applyFilters("", "");
+  });
+
+  // Export to PDF
+  document.getElementById("exportPDF").addEventListener("click", async function() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const tableElement = document.getElementById("leadsTable");
+    const canvas = await html2canvas(tableElement);
+    const imgData = canvas.toDataURL("image/png");
+    const pdfWidth = doc.internal.pageSize.getWidth();
+    const imgProps = doc.getImageProperties(imgData);
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+    doc.save("leads.pdf");
+  });
+</script>
     </body>
 
 </html>
