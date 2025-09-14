@@ -1,39 +1,78 @@
 <!DOCTYPE html>
 <html lang="en" data-sidenav-size="condensed">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Layout Icon View | Jidox - Material Design Admin & Dashboard Template
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+      name="description"
+    />
+    <meta content="Coderthemes" name="author" />
 
-    <head>
-        <meta charset="utf-8" />
-        <title>Layout Icon View | Jidox - Material Design Admin & Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- Daterangepicker css -->
+    <link
+      rel="stylesheet"
+      href="assets/vendor/daterangepicker/daterangepicker.css"
+    />
 
-        <!-- Daterangepicker css -->
-        <link rel="stylesheet" href="assets/vendor/daterangepicker/daterangepicker.css">
+    <!-- Vector Map css -->
+    <link
+      rel="stylesheet"
+      href="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css"
+    />
 
-        <!-- Vector Map css -->
-        <link rel="stylesheet" href="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Theme Config Js -->
+    <script src="assets/js/config.js"></script>
 
-        <!-- Theme Config Js -->
-        <script src="assets/js/config.js"></script>
+    <!-- App css -->
+    <link
+      href="assets/css/app.min.css"
+      rel="stylesheet"
+      type="text/css"
+      id="app-style"
+    />
 
-        <!-- App css -->
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <!-- Icons css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <style>
+    .metric-card {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      height: 100%;
+    }
+    .metric-chart {
+      width: 100%;
+      height: 180px;
+      margin-bottom: 10px;
+    }
+    .metric-value {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .metric-label {
+      color: #6c757d;
+    }
+  </style>
 
-        <!-- Icons css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </head>
-
-    <body>
-        <!-- Begin page -->
-        <div class="wrapper">
-
-            <!-- ========== Topbar Start ========== -->
-           <div class="navbar-custom" style="background-color: #173d1f;">
+  <body>
+    <!-- Begin page -->
+    <div class="wrapper">
+      <!-- ========== Topbar Start ========== -->
+            <div class="navbar-custom" style="background-color: #173d1f;">
                 <div class="topbar container-fluid">
                     <div class="d-flex align-items-center gap-lg-2 gap-1">
 
@@ -41,21 +80,21 @@
                         <div class="logo-topbar">
                             <!-- Logo light -->
                             <a href="index.html" class="logo-light">
-                                <span class="logo-lg">
-                                    <img src="assets/images/logo.png" alt="logo">
+                                <span class="">
+                                    <img src="assets/images/logo.png"  style="height: 71px;" alt="logo">
                                 </span>
-                                <span class="logo-sm">
-                                    <img src="assets/images/logo-sm.png" alt="small logo">
+                                <span class="">
+                                    <img src="assets/images/logo-sm.png"  style="height: 71px;" alt="small logo">
                                 </span>
                             </a>
 
                             <!-- Logo Dark -->
                             <a href="index.html" class="logo-dark">
-                                <span class="logo-lg">
-                                    <img src="assets/images/logo-dark.png" alt="dark logo">
+                                <span class="">
+                                    <img src="assets/images/logo-dark.png"  height="71" alt="dark logo">
                                 </span>
-                                <span class="logo-sm">
-                                    <img src="assets/images/logo-sm.png" alt="small logo">
+                                <span class="">
+                                    <img src="assets/images/logo-sm.png"  style="height: 71px;"  alt="small logo">
                                 </span>
                             </a>
                         </div>
@@ -74,112 +113,12 @@
                             </div>
                         </button>
 
-                        <!-- Topbar Search Form -->
-                        <div class="app-search dropdown d-none d-lg-block">
-                            <form>
-                                <div class="input-group">
-                                    <input type="search" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
-                                    <span class="ri-search-line search-icon"></span>
-                                </div>
-                            </form>
-
-                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
-                                <!-- item-->
-                                <div class="dropdown-header noti-title">
-                                    <h5 class="text-overflow mb-1">Found <b class="text-decoration-underline">08</b> results</h5>
-                                </div>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="ri-file-chart-line fs-16 me-1"></i>
-                                    <span>Analytics Report</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="ri-lifebuoy-line fs-16 me-1"></i>
-                                    <span>How can I help you?</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="ri-user-settings-line fs-16 me-1"></i>
-                                    <span>User profile settings</span>
-                                </a>
-
-                                <!-- item-->
-                                <div class="dropdown-header noti-title">
-                                    <h6 class="text-overflow mt-2 mb-1 text-uppercase">Users</h6>
-                                </div>
-
-                                <div class="notification-list">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="d-flex">
-                                            <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
-                                            <div class="w-100">
-                                                <h5 class="m-0 fs-14">Erwin Brown</h5>
-                                                <span class="fs-12 mb-0">UI Designer</span>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="d-flex">
-                                            <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
-                                            <div class="w-100">
-                                                <h5 class="m-0 fs-14">Jacob Deo</h5>
-                                                <span class="fs-12 mb-0">Developer</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
 
                     <ul class="topbar-menu d-flex align-items-center gap-3">
-                        <li class="dropdown d-lg-none">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="ri-search-line fs-22"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0">
-                                <form class="p-3">
-                                    <input type="search" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                                </form>
-                            </div>
-                        </li>
+                        
 
-                        <li class="dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12">
-                                <span class="align-middle d-none d-lg-inline-block">English</span> <i class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated">
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">
-                                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">
-                                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">
-                                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item">
-                                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                                </a>
-
-                            </div>
-                        </li>
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -302,125 +241,6 @@
                             </div>
                         </li>
 
-                        <li class="dropdown d-none d-sm-inline-block">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="ri-apps-2-fill fs-22"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0">
-
-                                <div class="p-2">
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/github.png" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/slack.png" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/behance.png" alt="Behance">
-                                                <span>Behance</span>
-                                            </a>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div>
-
-                            </div>
-                        </li>
-
-                        <li class="d-none d-sm-inline-block">
-                            <a class="nav-link" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
-                                <i class="ri-settings-3-fill fs-22"></i>
-                            </a>
-                        </li>
-
-                        <li class="d-none d-sm-inline-block">
-                            <div class="nav-link" id="light-dark-mode">
-                                <i class="ri-moon-fill fs-22"></i>
-                            </div>
-                        </li>
-
-
-                        <li class="d-none d-md-inline-block">
-                            <a class="nav-link" href="" data-toggle="fullscreen">
-                                <i class="ri-fullscreen-line fs-22"></i>
-                            </a>
-                        </li>
-
-                        <li class="dropdown me-md-2">
-                            <a class="nav-link dropdown-toggle arrow-none nav-user px-2" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <span class="account-user-avatar">
-                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
-                                </span>
-                                <span class="d-lg-flex flex-column gap-1 d-none">
-                                    <h5 class="my-0">Doris Larson</h5>
-                                    <h6 class="my-0 fw-normal">Founder</h6>
-                                </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
-                                <!-- item-->
-                                <div class=" dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">Welcome !</h6>
-                                </div>
-
-                                <!-- item-->
-                                <a href="pages-profile.html" class="dropdown-item">
-                                    <i class="ri-account-circle-fill align-middle me-1"></i>
-                                    <span>My Account</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="pages-profile.html" class="dropdown-item">
-                                    <i class="ri-settings-4-fill align-middle me-1"></i>
-                                    <span>Settings</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="pages-faq.html" class="dropdown-item">
-                                    <i class="ri-customer-service-2-fill align-middle me-1"></i>
-                                    <span>Support</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="auth-lock-screen.html" class="dropdown-item">
-                                    <i class="ri-lock-password-fill align-middle me-1"></i>
-                                    <span>Lock Screen</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="auth-logout-2.html" class="dropdown-item">
-                                    <i class="ri-logout-box-fill align-middle me-1"></i>
-                                    <span>Logout</span>
-                                </a>
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -432,20 +252,20 @@
                 <!-- Brand Logo Light -->
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-lg">
-                        <img src="assets/images/logo.png" alt="logo">
+                        <img src="assets/images/logo.png" style="height: 71px;"  alt="logo">
                     </span>
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="small logo">
+                        <img src="assets/images/logo-sm.png" style="height: 71px; margin-left: -15px;"  alt="small logo">
                     </span>
                 </a>
 
                 <!-- Brand Logo Dark -->
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="dark logo">
+                        <img src="assets/images/logo-dark.png"  style="height: 71px;"   alt="dark logo">
                     </span>
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="small logo">
+                        <img src="assets/images/logo-sm.png" style="height: 71px; margin-left: -15px;"  alt="small logo">
                     </span>
                 </a>
 
@@ -462,8 +282,8 @@
                 <!-- Sidebar -left -->
                 <div class="h-100" id="leftside-menu-container" data-simplebar>
                     <!-- Leftbar User -->
-                    <div class="leftbar-user p-3 text-white">
-                        <a href="pages-profile.html" class="d-flex align-items-center text-reset">
+                    <!-- <div class="leftbar-user p-3 text-white">
+                        <a href="" class="d-flex align-items-center text-reset">
                             <div class="flex-shrink-0">
                                 <img src="assets/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow">
                             </div>
@@ -475,7 +295,7 @@
                                 <i class="ri-arrow-right-s-fill fs-20"></i>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
                     <!--- Sidemenu -->
                     <ul class="side-nav">
@@ -554,389 +374,497 @@
                             </a>
                         </li>
 
+                        <li class="side-nav-item">
+                            <a href="user.html" class="side-nav-link">
+                                <i class="fas fa-user"></i>
+                                <span> User </span>
+                            </a>
+                        </li>
                     </ul>
                     <!--- End Sidemenu -->
 
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <!-- ========== Left Sidebar End ========== -->
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-            <div class="content-page">
-                <div class="content">
-
-                    <!-- Start Content-->
-                    <div class="container-fluid">
-
-                        <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">Reports & Analytics</h5>
-                    <div>
-                        <button class="btn btn-sm btn-outline-danger me-2"><i class="fas fa-file-pdf"></i> PDF</button>
-                        <button class="btn btn-sm btn-outline-success"><i class="fas fa-file-csv"></i> CSV</button>
-                    </div>
+      <div class="content-page">
+        <div class="content">
+          <!-- Start Content-->
+          <div class="container-fluid mt-4">
+            <div class="card">
+              <div
+                class="card-header d-flex justify-content-between align-items-center"
+              >
+                <h5 class="mb-0">Reports & Analytics</h5>
+                <div>
+                  <button
+                    class="btn btn-sm btn-outline-danger me-2"
+                    id="downloadPDF"
+                  >
+                    <i class="fas fa-file-pdf"></i> PDF
+                  </button>
+                  <button
+                    class="btn btn-sm btn-outline-success"
+                    id="downloadCSV"
+                  >
+                    <i class="fas fa-file-csv"></i> CSV
+                  </button>
                 </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-chart">
+                      <canvas id="leadsMetricChart"></canvas>
+                    </div>
+                    <div class="metric-value">156</div>
+                    <div class="metric-label">Number of Leads</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-chart">
+                      <canvas id="conversionMetricChart"></canvas>
+                    </div>
+                    <div class="metric-value">23%</div>
+                    <div class="metric-label">Conversion Rate</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-chart">
+                      <canvas id="revenueMetricChart"></canvas>
+                    </div>
+                    <div class="metric-value">$28,900</div>
+                    <div class="metric-label">Revenue</div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="metric-card">
+                    <div class="metric-chart">
+                      <canvas id="avgJobMetricChart"></canvas>
+                    </div>
+                    <div class="metric-value">$318</div>
+                    <div class="metric-label">Avg. Job Value</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-hover" id="metricsTable">
+                    <thead class="table-">
+                      <tr>
+                        <th
+                          style="color: #173d1f"
+                          data-time="Metric"
+                          data-metric="Metric"
+                        >
+                          Metric
+                        </th>
+                        <th
+                          style="color: #173d1f"
+                          data-time="ThisWeek"
+                          data-metric="leads"
+                        >
+                          This Week
+                        </th>
+                        <th
+                          style="color: #173d1f"
+                          data-time="LastWeek"
+                          data-metric="leads"
+                        >
+                          Last Week
+                        </th>
+                        <th
+                          style="color: #173d1f"
+                          data-time="Change"
+                          data-metric="leads"
+                        >
+                          Change
+                        </th>
+                        <th
+                          style="color: #173d1f"
+                          data-time="MTD"
+                          data-metric="leads"
+                        >
+                          MTD
+                        </th>
+                        <th
+                          style="color: #173d1f"
+                          data-time="YTD"
+                          data-metric="leads"
+                        >
+                          YTD
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Number of Leads</td>
+                        <td data-metric="leads" data-time="thisWeek">42</td>
+                        <td data-metric="leads" data-time="lastWeek">38</td>
+                        <td class="text-success">+10.5%</td>
+                        <td data-metric="leads" data-time="MTD">156</td>
+                        <td data-metric="leads" data-time="YTD">1240</td>
+                      </tr>
+                      <tr>
+                        <td>Conversion Rate (%)</td>
+                        <td data-metric="conversion" data-time="thisWeek">
+                          24
+                        </td>
+                        <td data-metric="conversion" data-time="lastWeek">
+                          22
+                        </td>
+                        <td class="text-success">+2.0%</td>
+                        <td data-metric="conversion" data-time="MTD">23</td>
+                        <td data-metric="conversion" data-time="YTD">21</td>
+                      </tr>
+                      <tr>
+                        <td>Revenue ($)</td>
+                        <td data-metric="revenue" data-time="thisWeek">8450</td>
+                        <td data-metric="revenue" data-time="lastWeek">7200</td>
+                        <td class="text-success">+17.4%</td>
+                        <td data-metric="revenue" data-time="MTD">28900</td>
+                        <td data-metric="revenue" data-time="YTD">245800</td>
+                      </tr>
+                      <tr>
+                        <td>Avg. Job Value ($)</td>
+                        <td data-metric="avgJob" data-time="thisWeek">325</td>
+                        <td data-metric="avgJob" data-time="lastWeek">315</td>
+                        <td class="text-success">+3.2%</td>
+                        <td data-metric="avgJob" data-time="MTD">318</td>
+                        <td data-metric="avgJob" data-time="YTD">305</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="card">
                 <div class="card-body">
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="chart-container">
-                                <canvas id="leadsChart"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="chart-container">
-                                <canvas id="revenueChart"></canvas>
-                            </div>
-                        </div>
+                  <div class="row mb-4">
+                    <div class="col-md-6">
+                      <div class="chart-container">
+                        <canvas id="leadsChart"></canvas>
+                      </div>
                     </div>
-                    
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Metric</th>
-                                    <th>This Week</th>
-                                    <th>Last Week</th>
-                                    <th>Change</th>
-                                    <th>MTD</th>
-                                    <th>YTD</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Number of Leads</td>
-                                    <td>42</td>
-                                    <td>38</td>
-                                    <td class="text-success">+10.5%</td>
-                                    <td>156</td>
-                                    <td>1,240</td>
-                                </tr>
-                                <tr>
-                                    <td>Conversion Rate</td>
-                                    <td>24%</td>
-                                    <td>22%</td>
-                                    <td class="text-success">+2.0%</td>
-                                    <td>23%</td>
-                                    <td>21%</td>
-                                </tr>
-                                <tr>
-                                    <td>Revenue</td>
-                                    <td>$8,450</td>
-                                    <td>$7,200</td>
-                                    <td class="text-success">+17.4%</td>
-                                    <td>$28,900</td>
-                                    <td>$245,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Avg. Job Value</td>
-                                    <td>$325</td>
-                                    <td>$315</td>
-                                    <td class="text-success">+3.2%</td>
-                                    <td>$318</td>
-                                    <td>$305</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="col-md-6">
+                      <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-
-                    </div>
-                    <!-- container -->
-
-                </div>
-                <!-- content -->
-
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> © Jidox - Coderthemes.com
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-md-end footer-links d-none d-md-block">
-                                    <a href="javascript: void(0);">About</a>
-                                    <a href="javascript: void(0);">Support</a>
-                                    <a href="javascript: void(0);">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- end Footer -->
-
-            </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
+          </div>
+          <!-- container -->
         </div>
-        <!-- END wrapper -->
+        <!-- content -->
 
-        <!-- Theme Settings -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="theme-settings-offcanvas">
-            <div class="d-flex align-items-center bg-primary p-3 offcanvas-header">
-                <h5 class="text-white m-0">Theme Settings</h5>
-                <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
+        <!-- Footer Start -->
+      </div>
 
-            <div class="offcanvas-body p-0">
-                <div data-simplebar class="h-100">
-                    <div class="card mb-0 p-3">
-                        <div class="alert alert-warning" role="alert">
-                            <strong>Customize </strong> the overall color scheme, sidebar menu, etc.
-                        </div>
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- END wrapper -->
 
-                        <h5 class="mt-0 fs-16 fw-bold mb-3">Choose Layout</h5>
-                        <div class="d-flex flex-column gap-2">
-                            <div class="form-check form-switch">
-                                <input id="customizer-layout01" name="data-layout" type="checkbox" value="vertical" class="form-check-input">
-                                <label class="form-check-label" for="customizer-layout01">Vertical</label>
-                            </div>
-                            <div class="form-check form-switch">
-                                <input id="customizer-layout02" name="data-layout" type="checkbox" value="horizontal" class="form-check-input">
-                                <label class="form-check-label" for="customizer-layout02">Horizontal</label>
-                            </div>
-                        </div>
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
 
-                        <h5 class="my-3 fs-16 fw-bold">Color Scheme</h5>
+    <!-- Daterangepicker js -->
+    <script src="assets/vendor/daterangepicker/moment.min.js"></script>
+    <script src="assets/vendor/daterangepicker/daterangepicker.js"></script>
 
-                        <div class="d-flex flex-column gap-2">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-light" value="light">
-                                <label class="form-check-label" for="layout-color-light">Light</label>
-                            </div>
+    <!-- Apex Charts js -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
 
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-dark" value="dark">
-                                <label class="form-check-label" for="layout-color-dark">Dark</label>
-                            </div>
-                        </div>
+    <!-- Vector Map js -->
+    <script src="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="assets/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
 
-                        <div id="layout-width">
-                            <h5 class="my-3 fs-16 fw-bold">Layout Mode</h5>
+    <!-- Dashboard App js -->
+    <script src="assets/js/pages/demo.dashboard.js"></script>
 
-                            <div class="d-flex flex-column gap-2">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-fluid" value="fluid">
-                                    <label class="form-check-label" for="layout-mode-fluid">Fluid</label>
-                                </div>
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
-                                <div id="layout-boxed">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-boxed" value="boxed">
-                                        <label class="form-check-label" for="layout-mode-boxed">Boxed</label>
-                                    </div>
-                                </div>
-
-                                <div id="layout-detached">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" name="data-layout-mode" id="data-layout-detached" value="detached">
-                                        <label class="form-check-label" for="data-layout-detached">Detached</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h5 class="my-3 fs-16 fw-bold">Topbar Color</h5>
-
-                        <div class="d-flex flex-column gap-2">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-light" value="light">
-                                <label class="form-check-label" for="topbar-color-light">Light</label>
-                            </div>
-
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-dark" value="dark">
-                                <label class="form-check-label" for="topbar-color-dark">Dark</label>
-                            </div>
-
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-brand" value="brand">
-                                <label class="form-check-label" for="topbar-color-brand">Brand</label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5 class="my-3 fs-16 fw-bold">Menu Color</h5>
-
-                            <div class="d-flex flex-column gap-2">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-light" value="light">
-                                    <label class="form-check-label" for="leftbar-color-light">Light</label>
-                                </div>
-
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-dark" value="dark">
-                                    <label class="form-check-label" for="leftbar-color-dark">Dark</label>
-                                </div>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-brand" value="brand">
-                                    <label class="form-check-label" for="leftbar-color-brand">Brand</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="sidebar-size">
-                            <h5 class="my-3 fs-16 fw-bold">Sidebar Size</h5>
-
-                            <div class="d-flex flex-column gap-2">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-default" value="default">
-                                    <label class="form-check-label" for="leftbar-size-default">Default</label>
-                                </div>
-
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-compact" value="compact">
-                                    <label class="form-check-label" for="leftbar-size-compact">Compact</label>
-                                </div>
-
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-small" value="condensed">
-                                    <label class="form-check-label" for="leftbar-size-small">Condensed</label>
-                                </div>
-
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-small-hover" value="sm-hover">
-                                    <label class="form-check-label" for="leftbar-size-small-hover">Hover View</label>
-                                </div>
-
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-full" value="full">
-                                    <label class="form-check-label" for="leftbar-size-full">Full Layout</label>
-                                </div>
-
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-fullscreen" value="fullscreen">
-                                    <label class="form-check-label" for="leftbar-size-fullscreen">Fullscreen Layout</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="layout-position">
-                            <h5 class="my-3 fs-16 fw-bold">Layout Position</h5>
-
-                            <div class="btn-group checkbox" role="group">
-                                <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
-                                <label class="btn btn-soft-primary w-sm" for="layout-position-fixed">Fixed</label>
-
-                                <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
-                                <label class="btn btn-soft-primary w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
-                            </div>
-                        </div>
-
-                        <div id="sidebar-user">
-                            <div class="d-flex justify-content-between align-items-center mt-3">
-                                <label class="fs-16 fw-bold m-0" for="sidebaruser-check">Sidebar User Info</label>
-                                <div class="form-check form-switch">
-                                    <input type="checkbox" class="form-check-input" name="sidebar-user" id="sidebaruser-check">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="offcanvas-footer border-top p-3 text-center">
-                <div class="row">
-                    <div class="col-6">
-                        <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
-                    </div>
-                    <div class="col-6">
-                        <a href="#" role="button" class="btn btn-primary w-100">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>          
-        
-        <!-- Vendor js -->
-        <script src="assets/js/vendor.min.js"></script>
-
-        <!-- Daterangepicker js -->
-        <script src="assets/vendor/daterangepicker/moment.min.js"></script>
-        <script src="assets/vendor/daterangepicker/daterangepicker.js"></script>
-        
-        <!-- Apex Charts js -->
-        <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-
-        <!-- Vector Map js -->
-        <script src="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="assets/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
-
-        <!-- Dashboard App js -->
-        <script src="assets/js/pages/demo.dashboard.js"></script>
-
-        <!-- App js -->
-        <script src="assets/js/app.min.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Toggle sidebar
-        document.getElementById('sidebarCollapse').addEventListener('click', function() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('content').classList.toggle('active');
+    <script>
+      function getMetricData(metricKey) {
+        const times = ["thisWeek", "lastWeek", "MTD", "YTD"];
+        return times.map((time) => {
+          const cell = document.querySelector(
+            `td[data-metric="${metricKey}"][data-time="${time}"]`
+          );
+          return cell ? parseFloat(cell.innerText.replace(/[^0-9\.]/g, "")) : 0;
         });
-        
-        // Charts
-        const leadsCtx = document.getElementById('leadsChart').getContext('2d');
+      }
+
+      window.addEventListener("DOMContentLoaded", function () {
+        // Chart: Leads
+        const leadsCtx = document.getElementById("leadsChart").getContext("2d");
+        const leadsData = getMetricData("leads");
         const leadsChart = new Chart(leadsCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Number of Leads',
-                    data: [65, 59, 80, 81, 56, 72],
-                    backgroundColor: 'rgba(58, 87, 232, 0.7)',
-                    borderColor: 'rgba(58, 87, 232, 1)',
-                    borderWidth: 1
-                }]
+          type: "line",
+          data: {
+            labels: ["This Week", "Last Week", "MTD", "YTD"],
+            datasets: [
+              {
+                label: "Number of Leads",
+                data: leadsData,
+                borderColor: "rgb(75, 192, 192)",
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                tension: 0.4,
+                fill: true,
+                pointRadius: 4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: true },
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-        
-        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
-        const revenueChart = new Chart(revenueCtx, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Revenue ($)',
-                    data: [12500, 15000, 18000, 16500, 19500, 22000],
-                    backgroundColor: 'rgba(26, 160, 83, 0.2)',
-                    borderColor: 'rgba(26, 160, 83, 1)',
-                    borderWidth: 2,
-                    tension: 0.3,
-                    fill: true
-                }]
+            scales: {
+              y: { beginAtZero: true },
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
+          },
         });
-    });
-</script>
 
-    </body>
-</html> 
+        // Chart: Revenue
+        const revenueCtx = document
+          .getElementById("revenueChart")
+          .getContext("2d");
+        const revenueData = getMetricData("revenue");
+        const revenueChart = new Chart(revenueCtx, {
+          type: "bar",
+          data: {
+            labels: ["This Week", "Last Week", "MTD", "YTD"],
+            datasets: [
+              {
+                label: "Revenue ($)",
+                data: revenueData,
+                backgroundColor: [
+                  "rgba(54, 162, 235, 0.6)",
+                  "rgba(54, 162, 235, 0.6)",
+                  "rgba(54, 162, 235, 0.6)",
+                  "rgba(54, 162, 235, 0.6)",
+                ],
+                borderColor: [
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(54, 162, 235, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: true },
+            },
+            scales: {
+              y: { beginAtZero: true },
+            },
+          },
+        });
+
+        // CSV download for table
+        document
+          .getElementById("downloadCSV")
+          .addEventListener("click", function () {
+            let csv = [];
+            const rows = document.querySelectorAll("#metricsTable tr");
+            rows.forEach((row) => {
+              const cols = row.querySelectorAll("th, td");
+              const rowData = [];
+              cols.forEach((col) => {
+                rowData.push(col.innerText.trim());
+              });
+              csv.push(rowData.join(","));
+            });
+            const csvContent = "data:text/csv;charset=utf-8," + csv.join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "metrics_report.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+
+        // PDF download of the card content
+        document
+          .getElementById("downloadPDF")
+          .addEventListener("click", async function () {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF("p", "mm", "a4");
+
+            const card = document.querySelector(".card");
+            const canvas = await html2canvas(card, { scale: 2 });
+            const imgData = canvas.toDataURL("image/png");
+
+            const imgProps = doc.getImageProperties(imgData);
+            const pdfWidth = doc.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            doc.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+            doc.save("report_metrics.pdf");
+          });
+      });
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      window.addEventListener("load", function () {
+        window.scrollTo(0, 0);
+      });
+
+      // Fetch metric data for the selected timeframe
+      function getMetricDataFromTable(timeframe = "MTD") {
+        const metricElements = document.querySelectorAll(
+          `[data-time="${timeframe}"]`
+        );
+        const metrics = {};
+        metricElements.forEach((cell) => {
+          const metricKey = cell.getAttribute("data-metric");
+          let value = parseFloat(cell.innerText.replace(/[$,%]/g, "")) || 0;
+          metrics[metricKey] = { value: value };
+        });
+
+        // Define max values (these could be dynamically calculated or fetched)
+        metrics.leads.max = 200;
+        metrics.conversion.max = 100;
+        metrics.revenue.max = 50000;
+        metrics.avgJob.max = 500;
+
+        return metrics;
+      }
+
+      let charts = {}; // Store chart instances
+
+      function createMetricChart(canvasId, metricKey, color, metrics) {
+        const ctx = document.getElementById(canvasId).getContext("2d");
+        const metricData = metrics[metricKey];
+
+        // Destroy previous chart if it exists
+        if (charts[canvasId]) {
+          charts[canvasId].destroy();
+        }
+
+        charts[canvasId] = new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: [metricKey, "Remaining"],
+            datasets: [
+              {
+                data: [metricData.value, metricData.max - metricData.value],
+                backgroundColor: [color, "#e9ecef"],
+                borderWidth: 0,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: "70%",
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                enabled: true,
+                callbacks: {
+                  label: function (context) {
+                    return `${context.label}: ${context.parsed}`;
+                  },
+                },
+              },
+            },
+          },
+        });
+      }
+
+      function renderChartsForTimeframe(timeframe) {
+        const metrics = getMetricDataFromTable(timeframe);
+
+        createMetricChart("leadsMetricChart", "leads", "#20c997", metrics);
+        createMetricChart(
+          "conversionMetricChart",
+          "conversion",
+          "#0d6efd",
+          metrics
+        );
+        createMetricChart("revenueMetricChart", "revenue", "#ffc107", metrics);
+        createMetricChart("avgJobMetricChart", "avgJob", "#dc3545", metrics);
+      }
+
+      window.addEventListener("DOMContentLoaded", function () {
+        // Initial render for default 'MTD'
+        renderChartsForTimeframe("MTD");
+
+        // Timeframe buttons
+        const timeButtons = document.querySelectorAll("[data-time-btn]");
+        timeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const selectedTime = this.getAttribute("data-time-btn");
+            renderChartsForTimeframe(selectedTime);
+          });
+        });
+
+        // CSV Download
+        document
+          .getElementById("downloadCSV")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            let csv = [];
+            const rows = document.querySelectorAll("#metricsTable tr");
+            rows.forEach((row) => {
+              const cols = row.querySelectorAll("th, td");
+              const rowData = [];
+              cols.forEach((col) => {
+                rowData.push(col.innerText.trim());
+              });
+              csv.push(rowData.join(","));
+            });
+            const csvContent = "data:text/csv;charset=utf-8," + csv.join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "metrics_report.csv");
+            link.style.display = "none";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+
+        // PDF Download
+        document
+          .getElementById("downloadPDF")
+          .addEventListener("click", async function (e) {
+            e.preventDefault();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF("p", "mm", "a4");
+            const card = document.querySelector(".card");
+            const canvas = await html2canvas(card, { scale: 2 });
+            const imgData = canvas.toDataURL("image/png");
+            const imgProps = doc.getImageProperties(imgData);
+            const pdfWidth = doc.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+            doc.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+            doc.save("report_metrics.pdf");
+          });
+      });
+    </script>
+  </body>
+</html>
