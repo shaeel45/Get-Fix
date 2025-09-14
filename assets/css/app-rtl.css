@@ -17489,7 +17489,7 @@ strong {
   color: #fff;
 }
 .conversation-list .odd .ctext-wrap {
-  background-color: var(--ct-primary);
+  background-color: #173d1f;
   -webkit-box-shadow: var(--ct-box-shadow-lg);
           box-shadow: var(--ct-box-shadow-lg);
 }
