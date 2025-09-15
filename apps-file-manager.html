@@ -35,11 +35,42 @@
       width: 100%;
       margin-bottom: 10px;
     }
+
+     .profile-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.profile-btn:hover {
+    color: #0d6efd; /* Bootstrap primary color */
+}
+
+/* Custom dropdown menu */
+.custom-dropdown-menu {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 150px;
+    padding: 0.5rem 0;
+}
+
+.custom-dropdown-menu .dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+}
+
+.custom-dropdown-menu .dropdown-item:hover {
+    background-color: #f1f1f1;
+    color: #000;}
   </style>
     <body>
         <!-- Begin page -->
         <div class="wrapper">
 
+             <!-- ========== Topbar Start ========== -->
              <!-- ========== Topbar Start ========== -->
             <div class="navbar-custom" style="background-color: #173d1f;">
                 <div class="topbar container-fluid">
@@ -91,7 +122,7 @@
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="ri-notification-3-fill fs-22"></i>
+                                <i class="ri-notification-3-fill fs-22 text-white" ></i>
                                 <span class="noti-icon-badge"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
@@ -105,8 +136,10 @@
                                                 <small>Clear All</small>
                                             </a>
                                         </div>
+                                        
                                     </div>
                                 </div>
+                                
 
                                 <div style="max-height: 300px;" data-simplebar>
 
@@ -208,7 +241,17 @@
                                 </a>
 
                             </div>
+                            
                         </li>
+                        <div class="custom-profile-dropdown dropdown">
+ <button class="profile-btn dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+     <i class="bi bi-person-circle text-white"></i>
+ </button>
+ <ul class="dropdown-menu custom-dropdown-menu dropdown-menu-end text-white" aria-labelledby="profileDropdown">
+     <li><h6 class="dropdown-header text-dark">Admin</h6></li>
+     <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+ </ul>
+</div>
 
                     </ul>
                 </div>
